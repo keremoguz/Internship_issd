@@ -1,4 +1,7 @@
 def find_comb(s):
+    """
+    finds all possible combinations and returns as a list
+    """
     lists = []
     res = []
     val_dict = {'2':['a','b','c'], '3': ['d','e','f'],
