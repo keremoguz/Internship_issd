@@ -1,34 +1,23 @@
-def find_comb(s):
-    """
-    finds all possible combinations and returns as a list
-    """
-    lists = []
-    res = []
-    val_dict = {'2':['a','b','c'], '3': ['d','e','f'],
-                '4': ['g','h','i'], '5':['j','k','l'],
-                '6': ['m','n','o'], '7': ['p','q','r','s'],
-                '8': ['t','u','v'], '9': ['w','x','y','z']
-                }
-    if len(s)== 1:
-        return [s]
-    for i in s:
-        lists.append(val_dict[i])
-    for i in range(len(lists)):
-        for k in range(len(lists[i])):
-            for m in range(i+1,len(lists)):
-                for n in lists[m]:
-                    res.append(lists[i][k] + n)
 
+
+
+def letterCombinations(digits):
+    if not digits:
+        return []
+    
+    phone_vals = {"2": "abc", "3": "def", "4": "ghi", "5": "jkl", "6": "mno", "7": "pqrs",
+            "8": "tuv", "9": "wxyz"}
+    res = []
+    
+    def addtores(combination, next_digits):
+        if not next_digits:
+            res.append(combination)
+            return
+        
+        for letter in phone_vals[next_digits[0]]:
+            addtores(combination + letter, next_digits[1:])
+    
+    addtores("", digits)
     return res
 
-print(find_comb("23"))
-
-
-
-
-
-        
-
-            
-
-
+print(letterCombinations("23"))

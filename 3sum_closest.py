@@ -1,7 +1,7 @@
 def find_closest(arr,target):
     l = []
     diffs = []
-    for i in range(len(arr)-1):
+    for i in range(len(arr)-2):
         """ i th loop keeps track of the i th element to be summed."""
         for k in range(i+1,len(arr)-1):
             for m in arr[k+1:]:
