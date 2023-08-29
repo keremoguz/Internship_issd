@@ -1,5 +1,10 @@
 from  collections import defaultdict
 def maxPoints(points):
+    """
+    stores the slopes as keys and by default the values are 0. 
+    While looping increments the corresponding value of the key slope b 1 and 
+    reassigns the max value if it is the max thus far.
+    """
     res = 1
     for i in range(len(points)):
         p1 = points[i]

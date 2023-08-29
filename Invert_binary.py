@@ -6,13 +6,17 @@ class Node:
 
 def invertbinary(root):
     if not root:
+        """base case: if there is no node to look for, exit the function"""
         return 
     
-    invertbinary(root.left)
-    invertbinary(root.right)
-    root.left,root.right = root.right, root.left
+    invertbinary(root.left) # traverses left subtree
+    invertbinary(root.right) # traverses right subtree
+    root.left,root.right = root.right, root.left # swaps the children of the node
 
 def depthfirstValues(root):
+    """
+    returns the binary tree as a list from left to right
+    """
     if root == None:
         return []
     return [root.value,*depthfirstValues(root.left),*depthfirstValues(root.right)]
