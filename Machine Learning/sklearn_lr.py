@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error
 
 data = pd.read_csv("data_for_lr.csv")
 
-x = data[["age"]]
+x = data[["avg_grade"]]
 y = data["grade"]
 
 model = LinearRegression()
@@ -21,7 +21,7 @@ print(f"Slope: {m}, Intercept:{b}")
 x_array = x.values
 
 plt.scatter(x,y, color = "red")
-plt.xlabel("age")
+plt.xlabel("avg_grade")
 plt.ylabel("grade")
 plt.plot(x_array, model.predict(x),color = "yellow")
 plt.show()
