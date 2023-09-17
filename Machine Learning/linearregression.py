@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from math import sqrt
 
 data  = pd.read_csv("data_for_lr.csv")
-x = data[["age"]]
+x = data[["avg_grade"]]
 y = data["grade"]
 x_array = x.values
 y_array = y.values
@@ -16,7 +16,7 @@ def rmse(m,b,points):
     """
     total_error = 0
     for i in range(len(points)):
-        x = points.iloc[i].age
+        x = points.iloc[i].avg_grade
         y = points.iloc[i].grade
         total_error += (y-(m*x +b))**2
 
@@ -33,7 +33,7 @@ def gradient_descent(m_now,b_now,points,L):
     n = len(points)
 
     for i in range(n):
-        x = points.iloc[i].age
+        x = points.iloc[i].avg_grade
         y = points.iloc[i].grade
         
         m_gradient += -(2/n)*x*(y-(m_now * x + b_now))
@@ -64,8 +64,8 @@ print(rmse(m,b,data))
     
 print(f"slope: {m}, constant: {b} ")
 
-plt.scatter(data.age,data.grade, color = "red")
-plt.xlabel("age")
+plt.scatter(data.avg_grade,data.grade, color = "red")
+plt.xlabel("avg_grade")
 plt.ylabel("grade")
 plt.plot(x_array,[m*x + b for x in x_array], color = "yellow")
 plt.show()
