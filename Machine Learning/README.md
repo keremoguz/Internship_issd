@@ -17,3 +17,9 @@
 ## Classification Model: Decision Tree
 - I used decision trees to classify the data I cleaned the data and took the related features as parameters to my model.
 - The data I took is in titanic.csv file, it includes passangers personal information and their survival rate.
+
+
+
+## Libraries and Technologies
+- I used Python as a programming language and Jupyter Notebook as an environment.
+- I utilized from Pandas, Matplotlib, Sklearn and Numpy libraries from Python.
